@@ -1,0 +1,109 @@
+@startuml
+Class Costumer{
+    String costumer_id
+    String name
+    String email
+    String gender
+    Int phone_number
+    Int age
+
+    Costumer create_costumer()
+    Costumer get_costumer()
+    void update_costumer()
+    void delete_costumer()
+
+}
+
+Class Employee{
+    String employee_id
+    String name
+    String email
+    String gender
+    Int age
+    Int phone_number
+
+    Employee create_employee()
+    Employee get_employee()
+    void update_employee()
+    void delete_employee()
+
+}
+
+Class Room{
+    String room_number
+    Int floor
+    Int Number_of_bathroom
+    Int capacity
+    Boolean is_double
+    Boolean is_availabe 
+
+    Room create_room()
+    Room get_room_details()
+    void Assign_room()
+
+}
+
+Class Reservation{
+    String reservation_id
+    String room_number
+    String costumer_id
+    String department
+    Date check_in
+    Date check_out
+    Reservation_type type
+
+    Reservation create_reservation()
+    Reservation get_reservation_details()
+    void update_reservation()
+
+}
+
+enum Reservation_type{
+    STANDARD
+    DUO
+    FAMILY
+    PREMIUM
+}
+
+Class Invoice{
+    String invoice_id
+    String reservation_id
+    Float total_to_pay
+
+    Reservation create_reservation()
+    Reservation get_reservation_details()
+    void update_reservation()
+
+}
+
+Class Hotel{
+    String hotel_id
+    String name
+    String location
+    Int number_of_employees
+    Int room_number
+    Int rating
+
+    Hotel create_hotel()
+    Hotel get_hotel_details()
+    void update_hotel()
+}
+
+Class Owner{
+    String _id
+    String name
+    String email
+
+    void Update_owner()
+    List<Hotel> get_all_hotels()
+    Hotel get_hotel()
+
+}
+
+Owner "1" -- "*" Hotel
+Hotel "1" -- "*" Room
+Hotel "1..*" -- "*" Employee
+Room "0..*" -- "1..*" Reservation
+Reservation "1..*" -- "1..*" Costumer
+Reservation "1" -- "1" Invoice
+@enduml
