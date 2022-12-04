@@ -1,4 +1,4 @@
-package com.example.devops;
+package tp.devops;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
