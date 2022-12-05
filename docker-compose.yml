@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  postgresqldb:
+    container_name: postgresqldb
+    image: postgres:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd
+      - MYSQL_DATABASE=spbapidb
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - postgresqldb:/var/lib/mysql
+  api:
+    container_name: api
+    image: devops-project
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - postgresqldb
+    ports:
+      - 8080:8080
+    restart: always
+
+volumes:
+  postgresqldb:
