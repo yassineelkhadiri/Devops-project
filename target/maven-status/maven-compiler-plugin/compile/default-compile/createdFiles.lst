@@ -1,0 +1,6 @@
+tp/devops/repositories/CustomerRepository.class
+tp/devops/services/CustomerService.class
+tp/devops/controllers/CustomerController.class
+tp/devops/dto/CreateCustomerDto.class
+tp/devops/entities/Customer.class
+tp/devops/DevopsApplication.class
