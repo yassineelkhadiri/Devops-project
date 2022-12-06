@@ -1,5 +1,6 @@
 package tp.devops.controllers;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import tp.devops.entities.Customer;
 import tp.devops.services.CustomerService;
@@ -8,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping(value = "/api/customers" )
 public class CustomerController {
 
     private final CustomerService customerService;
