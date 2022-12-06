@@ -5,15 +5,12 @@ services:
     container_name: postgresqldb
     image: postgres:latest
     environment:
-      - MYSQL_ROOT_PASSWORD=P@ssw0rd
-      - MYSQL_DATABASE=spbapidb
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=password
+      POSTGRES_DB: devops
+      POSTGRES_PASSWORD: superStrongP@ss
+      POSTGRES_USER: postgres
     restart: always
     ports:
-      - 5432:5432
-    volumes:
-      - postgresqldb:/var/lib/mysql
+      - 5555:5432
   api:
     container_name: api
     image: devops-project
@@ -27,4 +24,4 @@ services:
     restart: always
 
 volumes:
-  postgresqldb:
+  pgdata:
