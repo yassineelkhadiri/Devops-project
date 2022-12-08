@@ -17,7 +17,7 @@ nexusArtifactUploader artifacts: [[artifactId: 'devops', classifier: '', file: '
 def sonarScan() {
     echo "Running sonarQube scan..."
     sh 'mvn test'
-    sh 'mvn sonar:sonar -D sonar.login=48d7556f97d0484c006e752b08112ebef5b318c5'
+    sh 'mvn sonar:sonar -D sonar.login=sqa_609e3916d9f0e4ea56067e7c37f866c31c02f9dd'
 }
 
 // def sonarScan() {
