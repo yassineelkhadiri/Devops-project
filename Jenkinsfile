@@ -13,10 +13,11 @@ pipeline {
                 }
             }
         }
-        stage("Check JDK version"){
+        stage("Check JDK & maven version"){
             steps{
                 script{
                     sh 'java --version'
+                    sh 'mvn --version'
                 }
             }
         }
