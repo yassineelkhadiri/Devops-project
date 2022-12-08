@@ -41,4 +41,3 @@ def sonarScan() {
 //     }
 // }
 
-return this
