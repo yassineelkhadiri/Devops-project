@@ -16,6 +16,7 @@ def pushToNexus() {
 
 def sonarScan() {
     echo 'Running sonarQube scan...'
+    sh 'docker compose up postgresqldb'
     sh 'mvn test'
     sh 'mvn sonar:sonar -D sonar.login=sqa_609e3916d9f0e4ea56067e7c37f866c31c02f9dd'
 }
