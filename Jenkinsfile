@@ -6,10 +6,18 @@ pipeline {
         maven 'Maven'
     } 
     stages {
-        stage("init") {
+        stage("INIT") {
             steps {
                 script {
                     gv = load "script.groovy"
+                }
+            }
+        }
+        stage("Test Unitaire"){
+            steps{
+                script{
+                    sh 'echo Test Unitaire'
+                    gv.testunitaire()
                 }
             }
         }

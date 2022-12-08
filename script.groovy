@@ -14,9 +14,14 @@ def pushToNexus() {
     nexusArtifactUploader artifacts: [[artifactId: 'devops', classifier: '', file: 'target/devops-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-credentials', groupId: 'org.springframework.boot', nexusUrl: '172.21.0.4:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.1-SNAPSHOT'
 }
 
+def testunitaire(){
+    echo 'Running Unit Tests'
+    sh 'mvn test'
+}
+
+
 def sonarScan() {
     echo 'Running sonarQube scan...'
-    sh 'mvn test'
     sh 'mvn sonar:sonar -Dsonar.login=sqa_609e3916d9f0e4ea56067e7c37f866c31c02f9dd'
 }
 
