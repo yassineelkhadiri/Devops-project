@@ -34,19 +34,22 @@ pipeline {
         //         }
         //       }
         // } 
-        stage("Push JAR to Nexus"){
-            steps {
-                script {
-                    gv.pushToNexus()
-                }
-            }
-        }
-        stage("build image") {
-            steps {
-                script {
-                    gv.buildImage()
-                }
-            }
-        }
+
+
+
+        // stage("Push JAR to Nexus"){
+        //     steps {
+        //         script {
+        //             gv.pushToNexus()
+        //         }
+        //     }
+        // }
+        // stage("build image") {
+        //     steps {
+        //         script {
+        //             gv.buildImage()
+        //         }
+        //     }
+        // }
     }
 }
