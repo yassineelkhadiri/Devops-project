@@ -16,7 +16,7 @@ pipeline {
         stage("SonarQube Testing and Scan") {
             environment {
                 CI = 'true'
-                scannerHome = tool 'sonarqube'
+                scannerHome = tool 'SonarScanner'
             }
             agent{ docker { image 'maven'}  }
               steps {
