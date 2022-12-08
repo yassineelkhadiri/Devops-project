@@ -17,7 +17,7 @@ def pushToNexus() {
 def sonarScan() {
     echo 'Running sonarQube scan...'
     sh 'mvn sonar:sonar -D sonar.login=sqa_609e3916d9f0e4ea56067e7c37f866c31c02f9dd'
-    sh 'mvn test 172.21.0.3:9000'
+    sh 'mvn test'
 
 }
 
