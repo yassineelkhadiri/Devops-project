@@ -10,7 +10,7 @@ def buildImage() {
 
 def pushToNexus() {
     echo 'pushing the jar file to Nexus maven-snapshots repo...'
-    sh 'mvn clean install -D maven.test.skip=true'
+    sh 'mvn clean install'
     nexusArtifactUploader artifacts: [[artifactId: 'devops', classifier: '', file: 'target/devops-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-credentials', groupId: 'org.springframework.boot', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.1-SNAPSHOT'
 }
 
