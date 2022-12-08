@@ -13,6 +13,13 @@ pipeline {
                 }
             }
         }
+        stage("Check JDK version"){
+            steps{
+                script{
+                    sh 'java --version'
+                }
+            }
+        }
         stage("Test Unitaire"){
             steps{
                 script{
