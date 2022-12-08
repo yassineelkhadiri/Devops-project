@@ -14,18 +14,26 @@ pipeline {
             }
         }
         stage("SonarQube Testing and Scan") {
-            environment {
-                CI = 'true'
-                scannerHome = tool 'SonarScanner'
-            }
-            // agent{ docker { image 'maven'}  }
-              steps {
+            steps {
                 script {
-                   // sh 'mvn clean install -Dmaven.test.skip=true'
-                    gv.sonarScan()
+                    // gv.sonarScan()
+                    sh 'echo sonarqube'
                 }
-              }
-        } 
+            }
+        }
+        // stage("SonarQube Testing and Scan") {
+        //     environment {
+        //         CI = 'true'
+        //         scannerHome = tool 'sonarqube'
+        //     }
+        //     // agent{ docker { image 'maven'}  }
+        //       steps {
+        //         script {
+        //            // sh 'mvn clean install -Dmaven.test.skip=true'
+        //             gv.sonarScan()
+        //         }
+        //       }
+        // } 
         stage("Push JAR to Nexus"){
             steps {
                 script {

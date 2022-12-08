@@ -15,16 +15,22 @@ nexusArtifactUploader artifacts: [[artifactId: 'devops', classifier: '', file: '
 }
 
 def sonarScan() {
-        echo "Running sonarQube scan..."
-        withSonarQubeEnv('SonarScanner') {
-           // sh "${scannerHome}/bin/sonar-scanner"
-              sh "mvn clean verify sonar:sonar -Dsonar.projectKey=sonarqube "
-        }
-       /* timeout(time: 10, unit: 'MINUTES') {
-            waitForQualityGate abortPipeline: true
-        } */
-        
+    echo "Running sonarQube scan..."
+    sh 'mvn test'
+    sh 'mvn sonar:sonar -D sonar.login=48d7556f97d0484c006e752b08112ebef5b318c5'
 }
+
+// def sonarScan() {
+//         echo "Running sonarQube scan..."
+//         withSonarQubeEnv('sonarqube') {
+//            // sh "${scannerHome}/bin/sonar-scanner"
+//               sh "mvn clean verify sonar:sonar -Dsonar.projectKey=sonarqube "
+//         }
+//        /* timeout(time: 10, unit: 'MINUTES') {
+//             waitForQualityGate abortPipeline: true
+//         } */
+        
+// }
 
 // def deployApp(String serverIp, String serverUser) {
 //     echo 'deploying the application...'
