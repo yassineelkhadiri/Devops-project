@@ -22,7 +22,7 @@ def testunitaire() {
 def sonarScan() {
     echo 'Running sonarQube scan...'
     withSonarQubeEnv('sonarqube') {
-        sh 'mvn clean verify sonar:sonar -D sonar.projectKey=sonarqube -D maven.test.skip=true  -D sonar.login=squ_9eeaafc6b05dee1fdb09abfce13f3b477a6f7bfc'
+        sh 'mvn clean verify sonar:sonar -D sonar.projectKey=sonarqube -D maven.test.skip=true  -D sonar.login=sqa_d4ff2d7a76bcdebce75a2954e38dd42896b499b0'
         }
 }
 
