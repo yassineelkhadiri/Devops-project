@@ -11,7 +11,7 @@ def buildImage() {
 def pushToNexus() {
     echo 'pushing the jar file to Nexus maven-snapshots repo...'
     sh 'mvn clean install'
-    nexusArtifactUploader artifacts: [[artifactId: 'devops', classifier: '', file: 'target/devops-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-credentials', groupId: 'org.springframework.boot', nexusUrl: '172.21.0.3:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.1-SNAPSHOT'
+    nexusArtifactUploader artifacts: [[artifactId: 'devops', classifier: '', file: 'target/devops-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-credentials', groupId: 'org.springframework.boot', nexusUrl: '172.21.0.4:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.1-SNAPSHOT'
 }
 
 def testunitaire() {
@@ -22,7 +22,7 @@ def testunitaire() {
 def sonarScan() {
     echo 'Running sonarQube scan...'
     withSonarQubeEnv('sonarqube') {
-        sh 'mvn clean verify sonar:sonar -D sonar.projectKey=sonarqube -D maven.test.skip=true  -D sonar.login=sqa_d4ff2d7a76bcdebce75a2954e38dd42896b499b0'
+        sh 'mvn clean verify sonar:sonar -D sonar.projectKey=sonarqube -D maven.test.skip=true  -D sonar.login=sqa_6daa674f408cde6dc471f2647fdb2d90746d853c'
         }
 }
 
