@@ -11,7 +11,7 @@ def buildImage() {
 def pushToNexus() {
     echo 'pushing the jar file to Nexus maven-snapshots repo...'
     sh 'mvn clean install'
-    nexusArtifactUploader artifacts: [[artifactId: 'devops', classifier: '', file: 'target/devops-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-credentials', groupId: 'org.springframework.boot', nexusUrl: '172.21.0.3:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.1-SNAPSHOT'
+    nexusArtifactUploader artifacts: [[artifactId: 'devops', classifier: '', file: 'target/devops-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus-credentials', groupId: 'org.springframework.boot', nexusUrl: '172.23.0.3:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.1-SNAPSHOT'
 }
 
 def testunitaire() {
@@ -26,16 +26,5 @@ def sonarScan() {
         }
 }
 
-// def sonarScan() {
-//         echo "Running sonarQube scan..."
-//         withSonarQubeEnv('sonarqube') {
-//            // sh "${scannerHome}/bin/sonar-scanner"
-//               sh "mvn clean verify sonar:sonar -Dsonar.projectKey=sonarqube "
-//         }
-//        /* timeout(time: 10, unit: 'MINUTES') {
-//             waitForQualityGate abortPipeline: true
-//         } */
-
-// }
 
 return this

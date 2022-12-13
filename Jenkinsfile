@@ -37,19 +37,7 @@ pipeline {
                 }
             }
         }
-        // stage("SonarQube Testing and Scan") {
-        //     environment {
-        //         CI = 'true'
-        //         scannerHome = tool 'sonarqube'
-        //     }
-        //     // agent{ docker { image 'maven'}  }
-        //       steps {
-        //         script {
-        //            // sh 'mvn clean install -Dmaven.test.skip=true'
-        //             gv.sonarScan()
-        //         }
-        //       }
-        // } 
+       
         stage("Push JAR to Nexus"){
             steps {
                 script {
