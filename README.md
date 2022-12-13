@@ -28,7 +28,7 @@ In order to make this possible we used a bridged network to allow communication 
 
 ![](assets/Screenshots/sonarqube.png)
 
-## and we can view the published jar in Nexus: 
+## And we can view the published jar in Nexus: 
 
 
 ![](assets/Screenshots/nexus.png)
