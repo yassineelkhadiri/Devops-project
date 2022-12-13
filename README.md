@@ -1,13 +1,16 @@
 # Devops project
 ### This project is created to test the process of a CI/CD pipeline using Jenkins.
 below you may find our class diagram used for this project:
+
 ![](class_diagram.jpg)
 
 to run tests locally:
 ```java
 mvn test
 ```
-This is the output: 
+
+This is the output:
+
 ![](assets/Screenshots/local_tests.png)
 
 ## The main purpose of our pipeline is: 
@@ -22,11 +25,14 @@ In order to make this possible we used a bridged network to allow communication 
 
 
 ## Results of the SonarQube scan: 
+
 ![](assets/Screenshots/sonarqube.png)
 
 ## and we can view the published jar in Nexus: 
 
+
 ![](assets/Screenshots/nexus.png)
+
 
 
 
