@@ -10,5 +10,19 @@ mvn test
 This is the output: 
 ![](Screenshots/local_tests.png)
 
+## The main purpose of our pipeline is: 
+1. Check for both JDK and maven versions
+2. Run unit tests
+3. Perform tests and scans using SonarQube
+4. Publish .jar file to Nexus
+
+![](Screenshots/pipeline.png)
+
+In order to make this possible we used a bridged network to allow communication between Jenkins, SonarQube and Nexus containers
+
+
+## Results of the SonarQube scan: 
+![](Screenshots/sonarqube.png)
+
 
 
